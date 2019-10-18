@@ -1,0 +1,39 @@
+{
+  "name": "lab9",
+  "version": "1.0.0",
+  "description": "lab9 web",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/molinajimenez/lab9_web.git"
+  },
+  "keywords": [
+    "react"
+  ],
+  "author": "Francisco Molina",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/molinajimenez/lab9_web/issues"
+  },
+  "homepage": "https://github.com/molinajimenez/lab9_web#readme",
+  "dependencies": {
+    "react": "^16.10.2",
+    "react-dom": "^16.10.2"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.6",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "css-loader": "^3.2.0",
+    "eslint": "^6.5.1",
+    "html-webpack-plugin": "^3.2.0",
+    "style-loader": "^1.0.0",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.9",
+    "webpack-dev-server": "^3.8.2"
+  }
+}
