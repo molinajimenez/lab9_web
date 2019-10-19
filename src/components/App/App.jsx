@@ -1,11 +1,9 @@
 import React from 'react';
-import './App.css'
-import Terminal from '../Terminal/Terminal.jsx';
-const App = () =>{
-        return(
-            <Terminal />
-        ) 
-    
-}
+import './App.css';
+import Terminal from '../Terminal/Terminal';
 
-export default App
+const App = () => (
+  <Terminal />
+);
+
+export default App;

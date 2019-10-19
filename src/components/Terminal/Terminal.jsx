@@ -1,11 +1,12 @@
 import React from 'react';
-import './Terminal.css'
-class Terminal extends React.Component{
-    render(){
-        return(
-            <div className='terminal'></div>
-        )
-    }
-} 
+import './Terminal.css';
 
-export default Terminal
+class Terminal extends React.Component {
+  render() {
+    return (
+      <div className="terminal" />
+    );
+  }
+}
+
+export default Terminal;
