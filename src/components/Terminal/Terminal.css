@@ -1,0 +1,26 @@
+div.terminal{
+
+    background: #020202;
+	border-top: 20px solid #c4c4c4;
+	border-radius: .25rem;
+	box-shadow: 1px 1px 11px rgba(0, 0, 0, 0.22);
+	min-height: 425px;
+	max-width: 600px;
+	min-width: 450px;
+	padding: 0.5rem;
+	position: relative;
+	width: 100%;
+
+}
+div.terminal::before {
+    background: #747474;
+    border-radius: 50%;
+    content: "";
+    display: block;
+    height: 10px;
+    position: absolute;
+    top: -15px;
+    left: 5px;
+    width: 10px;
+}
+   

@@ -1,8 +1,9 @@
 import React from 'react';
-
+import './App.css'
+import Terminal from '../Terminal/Terminal.jsx';
 const App = () =>{
         return(
-            <h1>Hellow from react App!</h1>
+            <Terminal />
         ) 
     
 }

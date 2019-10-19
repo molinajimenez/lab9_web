@@ -1,0 +1,9 @@
+body{
+    background: rgb(201,0,34);
+	background: linear-gradient(135deg, rgba(201,0,34,1) 35%, rgba(213,200,0,1) 100%);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 100vh;
+}
+    
