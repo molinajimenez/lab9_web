@@ -11,7 +11,7 @@ module.exports={
     module: {
         rules:[
             {
-                test: /\.js$ || .jsx$/,
+                test: /\.jsx?$/,         // Match both .js and .jsx files,
                 exclude: /node_modules/,
                 use: {
                     loader: 'babel-loader'
@@ -19,6 +19,11 @@ module.exports={
             }
             
         ]
-    }
+    },
+    plugins: [
+        new htmlWebpackPlugin({
+            template: './src/index.html'
+        })
+    ]
 
 }
