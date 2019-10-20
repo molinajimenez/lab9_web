@@ -1,5 +1,6 @@
 import React from 'react';
 import Blinker from '../Blinker/Blinker'
+
 const LineContainer = (props) => {
     const {text, active} = props
     const style = {
@@ -11,6 +12,7 @@ const LineContainer = (props) => {
         return(
             <li style={style}>${text}
                 <Blinker></Blinker>
+                
             </li>
         )
 

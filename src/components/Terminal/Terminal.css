@@ -23,4 +23,10 @@ div.terminal::before {
     left: 5px;
     width: 10px;
 }
+
+div.terminal > ul{
+    list-style: none;
+	padding: 0;
+	margin: 0;
+}
    
