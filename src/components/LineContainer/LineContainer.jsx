@@ -6,13 +6,13 @@ const LineContainer = (props) => {
     const style = {
         "color": "white",
 	    "marginTop": "0.15rem",
-        "position": "relative"
+        "position": "relative",
+        "listStyle": "none"
     }
     if(active){
         return(
             <li style={style}>${text}
                 <Blinker></Blinker>
-                
             </li>
         )
 

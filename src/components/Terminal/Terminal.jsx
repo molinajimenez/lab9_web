@@ -3,12 +3,14 @@ import './Terminal.css'
 import '../LineContainer/LineContainer'
 import LineContainer from '../LineContainer/LineContainer'
 import HiddenForm from '../HiddenForm/HiddenForm'
+import Lines from '../Lines/Lines'
 
 class Terminal extends React.Component {
     constructor(props){
         super(props)
         this.state={
             input: '',
+            commands: ['try typing Neofetch!']
         }
     
         
@@ -23,17 +25,22 @@ class Terminal extends React.Component {
         })
     }
 
+    clearTerminal = () =>{
+        this.setState={
+            commands: []
+        }
+    }
+
     handleSubmit=(e)=>{
-        const { input } = this.state
+        const { input, commands } = this.state
 		e.preventDefault();
-		{input}
 		if (input === 'clear') {
             console.log("clearing")
             console.log("display FALSE")
-			//clearTerminal();
+			clearTerminal()
 			//setDisplayNeofetch(false);
 		} else if (input === ' ' || input.replace(/\s/g, '') === '') {
-			console.log("add new Line + $ input")
+			setLines([...commands, '$ ' + input]);
 		} else if (input === 'neofetch') {
             console.log("add new line")
             console.log("display TRUE")
@@ -50,16 +57,16 @@ class Terminal extends React.Component {
         this.focusInput()   
     }
   render() {
-      const { input } = this.state
+      const { input, commands } = this.state
     return (
       <div className="terminal">
-          <ul>
-            <LineContainer text="Try typing Neofetch!" />
-            <LineContainer active={true} text={input} />
-            
-          </ul>
+          <Lines commands={commands}>
 
-          <HiddenForm handleSubmit={this.handleSubmit} Onchange={this.changeDisplay} />
+          </Lines>
+
+          <LineContainer active={true} text={' '+input}/>
+        
+          <HiddenForm handleSubmit={this.handleSubmit} Onchange={this.changeDisplay}/>
           
           
       </div>
