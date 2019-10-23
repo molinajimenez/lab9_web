@@ -1,7 +1,6 @@
 
 form.InputForm{
     position: absolute;
-	bottom: -1;
 	left: 10px;
 	z-index: -10;
 }

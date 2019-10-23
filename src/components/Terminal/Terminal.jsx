@@ -10,29 +10,23 @@ class Terminal extends React.Component {
         this.state={
             input: '',
         }
-
-        this.focusInput.bind(this)
-        this.getInput.bind(this)
-        this.changeDisplay.bind(this)
     
         
     }
-    focusInput(e){
+    focusInput = (e)=>{
         document.querySelector('input[name="inputConsole"]').focus()
     }
-    getInput(){
-        document.querySelector('input[name="inputConsole"]')
-    }
 
-    changeDisplay(newDisplay){
+    changeDisplay=(newDisplay)=>{
         this.setState({
             input: newDisplay
         })
     }
 
-    handleSubmit = (e) => {
+    handleSubmit=(e)=>{
+        const { input } = this.state
 		e.preventDefault();
-		
+		{input}
 		if (input === 'clear') {
             console.log("clearing")
             console.log("display FALSE")
@@ -65,7 +59,7 @@ class Terminal extends React.Component {
             
           </ul>
 
-          <HiddenForm handleSubmit={this.handleSubmit} />
+          <HiddenForm handleSubmit={this.handleSubmit} Onchange={this.changeDisplay} />
           
           
       </div>

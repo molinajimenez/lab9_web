@@ -8,7 +8,8 @@
     "start": "webpack-dev-server --mode development --open --hot",
     "build": "webpack --mode production",
     "lint": "eslint  **/*.jsx",
-    "lint-fix": "eslint **/*.jsx --fix"
+    "lint-fix": "eslint **/*.jsx --fix",
+    "storybook": "start-storybook"
   },
   "repository": {
     "type": "git",
@@ -24,11 +25,16 @@
   },
   "homepage": "https://github.com/molinajimenez/lab9_web#readme",
   "dependencies": {
+    "@storybook/addon-knobs": "^5.2.5",
+    "@storybook/addon-options": "^5.2.5",
+    "@storybook/theming": "^5.2.5",
     "react": "^16.10.2",
     "react-dom": "^16.10.2"
   },
   "devDependencies": {
-    "babel-core": "^6.26.3",
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "@storybook/react": "^5.2.5",
+    "babel-core": "^7.0.0-0",
     "babel-loader": "^7.1.5",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
