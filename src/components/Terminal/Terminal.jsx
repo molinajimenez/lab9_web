@@ -42,21 +42,17 @@ class Terminal extends React.Component {
 		if (input === 'clear') {
             console.log("clearing")
 			this.clearTerminal()
-			//setDisplayNeofetch(false);
         } 
         else if (input === 'neofetch') {
             console.log("add new line")
             console.log("display TRUE")
-            //setLines([...lines, '$ ' + input]);
+            
             this.setState(prevState=>({
                 commands: [...prevState.commands, '$ ' + input],
                 show: true
             }))
-
-			//setDisplayNeofetch(true);
 		} else {
             console.log("add new line: command not found")
-            //setLines([...lines, '$ ' + input, `${input}: command not found`]);
             this.setState(prevState=>({
                 commands: [...prevState.commands, '$ ' + prevState.input + ': command not found']
             }))
@@ -73,12 +69,13 @@ class Terminal extends React.Component {
           <Lines commands={commands}>
 
           </Lines>
-
+        
+          <Neofetch show={show}></Neofetch>
           <LineContainer active={true} text={' '+input}/>
         
           <HiddenForm handleSubmit={this.handleSubmit} Onchange={this.changeDisplay}/>
           
-          <Neofetch show={show}></Neofetch>
+          
           
       </div>
     )
