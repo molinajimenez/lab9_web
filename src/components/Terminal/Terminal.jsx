@@ -4,13 +4,15 @@ import '../LineContainer/LineContainer'
 import LineContainer from '../LineContainer/LineContainer'
 import HiddenForm from '../HiddenForm/HiddenForm'
 import Lines from '../Lines/Lines'
+import Neofetch from '../Neofetch/Neofetch'
 
 class Terminal extends React.Component {
     constructor(props){
         super(props)
         this.state={
             input: '',
-            commands: ['try typing Neofetch!']
+            commands: ['try typing Neofetch!'],
+            show: false
         }
     
         this.handleSubmit.bind(this)
@@ -29,7 +31,8 @@ class Terminal extends React.Component {
     clearTerminal = () =>{
         this.setState({
             commands: [],
-            input: ''
+            input: '',
+            show: false
         })
     }
 
@@ -46,7 +49,8 @@ class Terminal extends React.Component {
             console.log("display TRUE")
             //setLines([...lines, '$ ' + input]);
             this.setState(prevState=>({
-                commands: [...prevState.commands, '$ ' + input]
+                commands: [...prevState.commands, '$ ' + input],
+                show: true
             }))
 
 			//setDisplayNeofetch(true);
@@ -62,7 +66,7 @@ class Terminal extends React.Component {
         this.focusInput()   
     }
   render() {
-      const { input, commands } = this.state
+      const { input, commands, show } = this.state
       const { onClick } = this.props
     return (
       <div className="terminal" onClick={onClick} tabIndex={0}>
@@ -74,6 +78,7 @@ class Terminal extends React.Component {
         
           <HiddenForm handleSubmit={this.handleSubmit} Onchange={this.changeDisplay}/>
           
+          <Neofetch show={show}></Neofetch>
           
       </div>
     )
