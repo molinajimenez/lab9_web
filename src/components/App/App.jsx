@@ -8,8 +8,7 @@ class App extends React.Component{
   }
 
   focusInput = (e) =>{
-    //document.querySelector('input[name="inputConsole"]').focus()
-    console.log("fired")
+    document.querySelector('input[name="inputConsole"]').focus()
 }
   render(){
     return(

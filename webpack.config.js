@@ -28,6 +28,7 @@ module.exports={
     resolve: {
         extensions: ['.js', '.jsx'],
       },
+    devtool: 'eval',
     plugins: [
         new htmlWebpackPlugin({
             template: './src/index.html'

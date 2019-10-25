@@ -7,10 +7,17 @@ class HiddenForm extends React.Component{
         super(props);
     }
 
-    getInput=()=>{
+    getInput=(e)=>{
         //console.log(this)
         const { Onchange } = this.props
-        Onchange(document.querySelector('input[name="inputConsole"]').value)
+        const hiddenInput =  document.querySelector('input[name="inputConsole"]')
+        if(e.which != 13){
+            Onchange(hiddenInput.value)
+        } else{
+            Onchange('')
+            hiddenInput.value = ''
+        }
+        
     }
 
     render(){

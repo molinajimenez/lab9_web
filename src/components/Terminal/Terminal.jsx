@@ -13,6 +13,7 @@ class Terminal extends React.Component {
             commands: ['try typing Neofetch!']
         }
     
+        this.handleSubmit.bind(this)
         
     }
     focusInput = (e)=>{
@@ -26,40 +27,45 @@ class Terminal extends React.Component {
     }
 
     clearTerminal = () =>{
-        this.setState={
-            commands: []
-        }
+        this.setState({
+            commands: [],
+            input: ''
+        })
     }
 
     handleSubmit=(e)=>{
-        const { input, commands } = this.state
-		e.preventDefault();
+        const { input } = this.state
+        e.preventDefault();
 		if (input === 'clear') {
             console.log("clearing")
-            console.log("display FALSE")
-			clearTerminal()
+			this.clearTerminal()
 			//setDisplayNeofetch(false);
-		} else if (input === ' ' || input.replace(/\s/g, '') === '') {
-			setLines([...commands, '$ ' + input]);
-		} else if (input === 'neofetch') {
+        } 
+        else if (input === 'neofetch') {
             console.log("add new line")
             console.log("display TRUE")
-			//setLines([...lines, '$ ' + input]);
+            //setLines([...lines, '$ ' + input]);
+            this.setState(prevState=>({
+                commands: [...prevState.commands, '$ ' + input]
+            }))
+
 			//setDisplayNeofetch(true);
 		} else {
             console.log("add new line: command not found")
-			//setLines([...lines, '$ ' + input, `${input}: command not found`]);
+            //setLines([...lines, '$ ' + input, `${input}: command not found`]);
+            this.setState(prevState=>({
+                commands: [...prevState.commands, '$ ' + prevState.input + ': command not found']
+            }))
 		}
-        console.log("clearInput")
-		//clearInput();
 	}
     componentDidMount(){
         this.focusInput()   
     }
   render() {
       const { input, commands } = this.state
+      const { onClick } = this.props
     return (
-      <div className="terminal">
+      <div className="terminal" onClick={onClick} tabIndex={0}>
           <Lines commands={commands}>
 
           </Lines>
