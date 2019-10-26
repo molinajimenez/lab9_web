@@ -6,7 +6,8 @@ const Lines = (props) => {
     const style = {
         "listStyle": "none",
         "padding": "0",
-        "margin": "0"
+        "margin": "0",
+        "color": "black"
     }
     return(
         <ul style={style}>

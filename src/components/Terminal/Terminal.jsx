@@ -74,9 +74,6 @@ class Terminal extends React.Component {
           <LineContainer active={true} text={' '+input}/>
         
           <HiddenForm handleSubmit={this.handleSubmit} Onchange={this.changeDisplay}/>
-          
-          
-          
       </div>
     )
   }

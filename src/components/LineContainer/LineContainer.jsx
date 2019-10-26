@@ -4,7 +4,7 @@ import Blinker from '../Blinker/Blinker'
 const LineContainer = (props) => {
     const {text, active} = props
     const style = {
-        "color": "white",
+        "color": "black",
 	    "marginTop": "0.15rem",
         "position": "relative",
         "listStyle": "none"

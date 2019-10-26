@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react';
 import { withKnobs, text, boolean } from '@storybook/addon-knobs';
 export default { title: 'LineContainer' };
 
-const stories = storiesOf('Storybook Knobs', module);
+const stories = storiesOf('LineContainer', module);
 stories.addDecorator(withKnobs);
 
 stories.add('withText', () => (
