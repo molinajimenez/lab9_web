@@ -1,10 +1,8 @@
-import React from 'react'
-import './Blinker.css'
+import React from 'react';
+import './Blinker.css';
 
-const Blinker = () =>{
-    return(
-        <div className="blinker"></div>
-    )
-}
+const Blinker = () => (
+  <div className="blinker" />
+);
 
-export default Blinker
+export default Blinker;

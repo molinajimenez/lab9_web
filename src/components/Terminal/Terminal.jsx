@@ -39,11 +39,11 @@ class Terminal extends React.Component {
     handleSubmit=(e)=>{
         const { input } = this.state
         e.preventDefault();
-		if (input === 'clear') {
+		if (input.toLowerCase() === 'clear') {
             console.log("clearing")
 			this.clearTerminal()
         } 
-        else if (input === 'neofetch') {
+        else if (input.toLowerCase() === 'neofetch') {
             console.log("add new line")
             console.log("display TRUE")
             
